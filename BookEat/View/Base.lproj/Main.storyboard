@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ibr-WW-UCo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation View Controller-->
+        <scene sceneID="xT8-p3-ekk">
+            <objects>
+                <navigationController storyboardIdentifier="navigationController" id="Ibr-WW-UCo" customClass="NavigationViewController" customModule="BookEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="E1y-Y2-JGj"/>
+                    <navigationItem key="navigationItem" id="3RZ-C8-tPp"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZJC-AT-A5n">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Lho-Yy-ez9" kind="relationship" relationship="rootViewController" id="8jL-LA-IRK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GaE-ZZ-g0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3891" y="1195"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="lIr-Tn-yZ0">
+            <objects>
+                <tabBarController storyboardIdentifier="TabbarViewController" id="VL8-Wb-Z9b" customClass="TabBarViewController" customModule="BookEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="BIJ-Nr-jwM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ITX-Kd-chU" kind="relationship" relationship="viewControllers" id="UhG-JR-ETz"/>
+                        <segue destination="GaJ-Iv-CJN" kind="relationship" relationship="viewControllers" id="VR4-W7-RGX"/>
+                        <segue destination="jpN-6f-U8M" kind="relationship" relationship="viewControllers" id="HZj-U0-8f9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LB7-CH-8vT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1529" y="1195"/>
+        </scene>
+        <!--Connexion-->
+        <scene sceneID="OuJ-Dy-qtc">
+            <objects>
+                <viewController id="Lho-Yy-ez9" customClass="LoginViewController" customModule="BookEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wpn-jR-5sI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="LAa-dO-EjI">
+                                <rect key="frame" x="182" y="475" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0vi-Hd-ThB"/>
+                                    <constraint firstAttribute="width" constant="50" id="Qg9-22-zOo"/>
+                                </constraints>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9EM-Kn-lsf">
+                                <rect key="frame" x="119.5" y="496.5" width="175" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="H3I-F0-9yT"/>
+                                    <constraint firstAttribute="height" constant="30" id="S9A-yb-19B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                                <state key="normal" title="Créer un compte">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cqK-Le-U34" kind="show" id="6eV-9m-wDT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H77-g8-Lsa">
+                                <rect key="frame" x="119.5" y="456.5" width="175" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Peq-LA-ukq"/>
+                                    <constraint firstAttribute="width" constant="175" id="jSF-An-wa7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                                <state key="normal" title="Se connecter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="connexion:" destination="Lho-Yy-ez9" eventType="touchUpInside" id="Ijj-eG-qMm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlb-oi-nwJ">
+                                <rect key="frame" x="57" y="283" width="300" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Zci-oH-aJT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jOK-KJ-05J">
+                                <rect key="frame" x="57" y="316" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="2g2-Er-NTf"/>
+                                    <constraint firstAttribute="width" constant="300" id="vba-wz-c0A"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Lho-Yy-ez9" id="joi-T0-DUA"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRC-3O-A9W">
+                                <rect key="frame" x="57" y="365" width="300" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="07B-sZ-BVv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="mv0-7h-Ch4">
+                                <rect key="frame" x="142" y="113" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="7os-tG-OCg"/>
+                                    <constraint firstAttribute="width" constant="130" id="K6U-Rl-iLu"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="EPb-SX-IQC">
+                                <rect key="frame" x="57" y="397.5" width="300" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="klF-6W-cte"/>
+                                    <constraint firstAttribute="width" constant="300" id="l4z-81-A6G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Lho-Yy-ez9" id="axE-ml-Kz3"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aI-HB-nb3">
+                                <rect key="frame" x="90.5" y="536.5" width="233" height="30"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="13"/>
+                                <state key="normal" title="Se connecter en tant que Restaurant">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.052919112150000003" green="0.363972187" blue="0.40000766519999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="EPb-SX-IQC" firstAttribute="centerX" secondItem="mv0-7h-Ch4" secondAttribute="centerX" id="6d6-8Z-pl3"/>
+                            <constraint firstItem="9EM-Kn-lsf" firstAttribute="centerX" secondItem="mv0-7h-Ch4" secondAttribute="centerX" id="9tI-xg-qmD"/>
+                            <constraint firstItem="6aI-HB-nb3" firstAttribute="centerX" secondItem="mv0-7h-Ch4" secondAttribute="centerX" id="EPi-h3-4Jh"/>
+                            <constraint firstItem="mv0-7h-Ch4" firstAttribute="centerX" secondItem="wpn-jR-5sI" secondAttribute="centerX" id="NFP-Og-r8M"/>
+                            <constraint firstItem="dlb-oi-nwJ" firstAttribute="centerX" secondItem="mv0-7h-Ch4" secondAttribute="centerX" id="NJV-0l-it2"/>
+                            <constraint firstItem="mv0-7h-Ch4" firstAttribute="top" secondItem="fZu-P4-F3l" secondAttribute="top" constant="25" id="Ol8-4C-y7G"/>
+                            <constraint firstItem="H77-g8-Lsa" firstAttribute="centerX" secondItem="mv0-7h-Ch4" secondAttribute="centerX" id="ToQ-L5-bka"/>
+                            <constraint firstItem="LAa-dO-EjI" firstAttribute="top" secondItem="EPb-SX-IQC" secondAttribute="bottom" constant="43.5" id="UtA-2u-5ie"/>
+                            <constraint firstItem="H77-g8-Lsa" firstAttribute="top" secondItem="EPb-SX-IQC" secondAttribute="bottom" constant="25" id="W9m-EQ-Oe7"/>
+                            <constraint firstItem="9EM-Kn-lsf" firstAttribute="top" secondItem="H77-g8-Lsa" secondAttribute="bottom" constant="10" id="WCx-Xe-fy7"/>
+                            <constraint firstItem="jOK-KJ-05J" firstAttribute="top" secondItem="dlb-oi-nwJ" secondAttribute="bottom" constant="10" id="c4R-LW-KoA"/>
+                            <constraint firstItem="jOK-KJ-05J" firstAttribute="centerX" secondItem="mv0-7h-Ch4" secondAttribute="centerX" id="eOT-e9-89L"/>
+                            <constraint firstItem="6aI-HB-nb3" firstAttribute="top" secondItem="9EM-Kn-lsf" secondAttribute="bottom" constant="10" id="iKj-nh-ej7"/>
+                            <constraint firstItem="EPb-SX-IQC" firstAttribute="top" secondItem="VRC-3O-A9W" secondAttribute="bottom" constant="10" id="oQo-Xe-qUC"/>
+                            <constraint firstItem="VRC-3O-A9W" firstAttribute="top" secondItem="jOK-KJ-05J" secondAttribute="bottom" constant="15" id="vQd-2w-GX9"/>
+                            <constraint firstItem="dlb-oi-nwJ" firstAttribute="top" secondItem="mv0-7h-Ch4" secondAttribute="bottom" constant="40" id="vfh-Zg-HMR"/>
+                            <constraint firstItem="LAa-dO-EjI" firstAttribute="centerX" secondItem="mv0-7h-Ch4" secondAttribute="centerX" id="xhl-WR-rCQ"/>
+                            <constraint firstItem="VRC-3O-A9W" firstAttribute="centerX" secondItem="dlb-oi-nwJ" secondAttribute="centerX" id="zlA-m4-Vyw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fZu-P4-F3l"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="z5B-SW-GDd" appends="YES" id="DoD-WY-gAj"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Connexion" id="ehz-Lg-7Je"/>
+                    <connections>
+                        <outlet property="connexionIndicator" destination="LAa-dO-EjI" id="Hq1-9m-ijw"/>
+                        <outlet property="emailField" destination="jOK-KJ-05J" id="7j0-ZO-Hc4"/>
+                        <outlet property="loginButton" destination="H77-g8-Lsa" id="eR1-eH-3bu"/>
+                        <outlet property="loginRestaurantButton" destination="6aI-HB-nb3" id="bj0-NP-jIS"/>
+                        <outlet property="passwordField" destination="EPb-SX-IQC" id="srT-zt-Nt1"/>
+                        <outlet property="registerButton" destination="9EM-Kn-lsf" id="aH4-fn-hpn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLi-zZ-r8v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="z5B-SW-GDd">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="Lho-Yy-ez9" id="a1e-KT-Cet"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-2697" y="806"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="o7t-4o-1kS">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="ITX-Kd-chU" customClass="HomeViewController" customModule="BookEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3bV-l4-ef5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rcg-kb-1SH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantCell" rowHeight="300" id="I3N-vI-PPS" customClass="RestaurantTableViewCell" customModule="BookEat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="300"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3N-vI-PPS" id="J91-00-Pfx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K1h-ij-Uls">
+                                                    <rect key="frame" x="0.0" y="5" width="414" height="290"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Q4J-Yd-hHO">
+                                                            <rect key="frame" x="10" y="5" width="394" height="190"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="190" id="nDP-oL-Jc3"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTH-O3-kB8">
+                                                            <rect key="frame" x="20" y="205" width="45.5" height="26.5"/>
+                                                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="20"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horaire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvl-1c-Eia">
+                                                            <rect key="frame" x="23" y="233.5" width="56" height="20"/>
+                                                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dispo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qda-IV-xBR">
+                                                            <rect key="frame" x="352" y="205" width="42" height="20"/>
+                                                            <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                                                            <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWK-A2-7mH">
+                                                            <rect key="frame" x="23" y="268.5" width="38.5" height="18.5"/>
+                                                            <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="fvl-1c-Eia" firstAttribute="leading" secondItem="K1h-ij-Uls" secondAttribute="leading" constant="23" id="3WT-9k-miV"/>
+                                                        <constraint firstAttribute="height" constant="290" id="6ra-4n-rd7"/>
+                                                        <constraint firstItem="Q4J-Yd-hHO" firstAttribute="leading" secondItem="K1h-ij-Uls" secondAttribute="leading" constant="10" id="F8O-Je-d5c"/>
+                                                        <constraint firstItem="qWK-A2-7mH" firstAttribute="leading" secondItem="K1h-ij-Uls" secondAttribute="leading" constant="23" id="FQ8-dN-JxH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Qda-IV-xBR" secondAttribute="trailing" constant="20" symbolic="YES" id="KIt-lt-jV2"/>
+                                                        <constraint firstItem="fvl-1c-Eia" firstAttribute="top" secondItem="DTH-O3-kB8" secondAttribute="bottom" constant="2" id="VWG-B8-Fy6"/>
+                                                        <constraint firstItem="Qda-IV-xBR" firstAttribute="top" secondItem="Q4J-Yd-hHO" secondAttribute="bottom" constant="10" id="VXn-pq-Zah"/>
+                                                        <constraint firstItem="DTH-O3-kB8" firstAttribute="leading" secondItem="K1h-ij-Uls" secondAttribute="leading" constant="20" symbolic="YES" id="iS2-jl-yaK"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Q4J-Yd-hHO" secondAttribute="trailing" constant="10" id="vxx-WS-caT"/>
+                                                        <constraint firstAttribute="bottom" secondItem="qWK-A2-7mH" secondAttribute="bottom" constant="3" id="x5e-fA-uJw"/>
+                                                        <constraint firstItem="Q4J-Yd-hHO" firstAttribute="top" secondItem="K1h-ij-Uls" secondAttribute="top" constant="5" id="y3O-y4-Tu6"/>
+                                                        <constraint firstItem="DTH-O3-kB8" firstAttribute="top" secondItem="Q4J-Yd-hHO" secondAttribute="bottom" constant="10" id="zD6-63-Cvf"/>
+                                                        <constraint firstItem="qWK-A2-7mH" firstAttribute="top" secondItem="fvl-1c-Eia" secondAttribute="bottom" constant="15" id="zjv-7b-UIB"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="K1h-ij-Uls" firstAttribute="leading" secondItem="J91-00-Pfx" secondAttribute="leading" id="HTf-22-Qv1"/>
+                                                <constraint firstItem="K1h-ij-Uls" firstAttribute="top" secondItem="J91-00-Pfx" secondAttribute="top" constant="5" id="OFa-Qq-ii4"/>
+                                                <constraint firstAttribute="bottom" secondItem="K1h-ij-Uls" secondAttribute="bottom" constant="5" id="cge-zw-YZ7"/>
+                                                <constraint firstAttribute="trailing" secondItem="K1h-ij-Uls" secondAttribute="trailing" id="iuo-NK-Ie3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.77791568650537835" green="0.82777456064881894" blue="0.83421040415146197" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="dispoRestoLabel" destination="Qda-IV-xBR" id="6xU-Ni-GTp"/>
+                                            <outlet property="horairesRestoLabel" destination="fvl-1c-Eia" id="Na7-jX-wFA"/>
+                                            <outlet property="nameRestoLabel" destination="DTH-O3-kB8" id="BnN-gz-ctm"/>
+                                            <outlet property="ticketRestoLabel" destination="qWK-A2-7mH" id="WUX-px-pXx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ITX-Kd-chU" id="ZPW-5p-4cR"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rcg-kb-1SH" firstAttribute="leading" secondItem="thZ-RX-D47" secondAttribute="leading" id="EMo-JG-qbg"/>
+                            <constraint firstItem="rcg-kb-1SH" firstAttribute="trailing" secondItem="thZ-RX-D47" secondAttribute="trailing" id="HFH-DD-tCn"/>
+                            <constraint firstItem="rcg-kb-1SH" firstAttribute="bottom" secondItem="thZ-RX-D47" secondAttribute="bottom" id="VWq-oy-vW6"/>
+                            <constraint firstItem="rcg-kb-1SH" firstAttribute="top" secondItem="thZ-RX-D47" secondAttribute="top" id="v9U-TH-mvg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="thZ-RX-D47"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="accountIcon" id="pSd-JZ-qiX"/>
+                    <connections>
+                        <outlet property="tableView" destination="rcg-kb-1SH" id="WVm-T0-dcF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BW7-t1-MbA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162.31884057971016" y="467.41071428571428"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="BEK-EO-nnf">
+            <objects>
+                <viewController id="GaJ-Iv-CJN" customClass="SearchViewController" customModule="BookEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CgI-fj-WAD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEARCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ZL-K1-PKm">
+                                <rect key="frame" x="153" y="431" width="108" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfz-uY-1rn">
+                                <rect key="frame" x="184" y="503" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="test:" destination="GaJ-Iv-CJN" eventType="touchUpInside" id="IYo-K2-Nzr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eeb-8p-cOz">
+                                <rect key="frame" x="192" y="572" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="add"/>
+                                <connections>
+                                    <action selector="add:" destination="GaJ-Iv-CJN" eventType="touchUpInside" id="CDg-kM-hUh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0ZL-K1-PKm" firstAttribute="centerY" secondItem="CgI-fj-WAD" secondAttribute="centerY" id="8kr-7j-O7L"/>
+                            <constraint firstItem="0ZL-K1-PKm" firstAttribute="centerX" secondItem="CgI-fj-WAD" secondAttribute="centerX" id="ahe-RN-fri"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a6o-2N-3DS"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="tOa-XF-g9f"/>
+                    <navigationItem key="navigationItem" id="gcd-RI-Ly6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPi-IU-zel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162.31884057971016" y="1194.6428571428571"/>
+        </scene>
+        <!--Register-->
+        <scene sceneID="X2z-aB-ue7">
+            <objects>
+                <viewController id="cqK-Le-U34" customClass="RegisterViewController" customModule="BookEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P3q-pj-Cvf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNC-WO-T5T">
+                                <rect key="frame" x="344" y="108" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="cqK-Le-U34" eventType="touchUpInside" id="4nC-cV-uVn"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="KD3-hG-6Cq">
+                                <rect key="frame" x="142" y="113" width="130" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="D0C-yg-fUs"/>
+                                    <constraint firstAttribute="height" constant="130" id="HCy-rW-pbQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="MH6-Pc-SvX"/>
+                                    <constraint firstAttribute="width" constant="130" id="gh5-pY-dXn"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="left" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="77h-1W-agJ">
+                                <rect key="frame" x="57" y="268" width="300" height="427"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSW-E5-eFG">
+                                        <rect key="frame" x="0.0" y="0.0" width="38.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UEZ-pv-of8">
+                                        <rect key="frame" x="0.0" y="30.5" width="300" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="9EJ-94-CTQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="family-name"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="cqK-Le-U34" id="Fsf-nn-5wQ"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prenom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTo-2Y-ORv">
+                                        <rect key="frame" x="0.0" y="72.5" width="65" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Of-uB-fJd">
+                                        <rect key="frame" x="0.0" y="103" width="300" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="yDl-A6-axw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="name"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="cqK-Le-U34" id="2a2-2u-fGW"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afZ-Rc-MD3">
+                                        <rect key="frame" x="0.0" y="145" width="123" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ma-Vw-hOL">
+                                        <rect key="frame" x="0.0" y="175.5" width="300" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="Ut1-5C-jT5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="cqK-Le-U34" id="i2I-17-rOT"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Téléphone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmf-ia-eFi">
+                                        <rect key="frame" x="0.0" y="217.5" width="89.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0000000000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ia-X7-bAb">
+                                        <rect key="frame" x="0.0" y="248" width="115" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" textContentType="tel"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="cqK-Le-U34" id="Edg-kx-FSg"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qLi-qw-CyN">
+                                        <rect key="frame" x="0.0" y="290" width="120" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="80a-fT-f2v">
+                                        <rect key="frame" x="0.0" y="320.5" width="300" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="zeO-j2-eKq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="cqK-Le-U34" id="2NU-Ob-c0O"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comfirmation mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVQ-Ic-p1J">
+                                        <rect key="frame" x="0.0" y="362.5" width="244.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="5sA-nn-Lb7">
+                                        <rect key="frame" x="0.0" y="393" width="300" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="FgL-2P-X10"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="cqK-Le-U34" id="c2n-Js-pQv"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="aOf-xo-2av"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7z5-4U-VoA">
+                                <rect key="frame" x="119.5" y="720" width="175" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="IhT-0X-tYp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                                <state key="normal" title="S'inscrire">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="validate:" destination="cqK-Le-U34" eventType="touchUpInside" id="efH-WV-ho2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.052919112150000003" green="0.363972187" blue="0.40000766519999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="aNC-WO-T5T" firstAttribute="top" secondItem="Zga-Ig-hE8" secondAttribute="top" constant="20" id="0dN-lM-1ge"/>
+                            <constraint firstItem="7z5-4U-VoA" firstAttribute="top" secondItem="77h-1W-agJ" secondAttribute="bottom" constant="25" id="26K-dX-6BA"/>
+                            <constraint firstItem="77h-1W-agJ" firstAttribute="centerX" secondItem="Zga-Ig-hE8" secondAttribute="centerX" id="4Xi-i6-GHz"/>
+                            <constraint firstItem="77h-1W-agJ" firstAttribute="top" secondItem="KD3-hG-6Cq" secondAttribute="bottom" constant="25" id="6C6-b7-x2X"/>
+                            <constraint firstItem="KD3-hG-6Cq" firstAttribute="top" secondItem="Zga-Ig-hE8" secondAttribute="top" constant="25" id="Qhp-c1-Phk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aNC-WO-T5T" secondAttribute="trailing" constant="20" id="fnP-FZ-nz4"/>
+                            <constraint firstItem="7z5-4U-VoA" firstAttribute="centerX" secondItem="P3q-pj-Cvf" secondAttribute="centerX" id="nGC-Ph-jva"/>
+                            <constraint firstItem="KD3-hG-6Cq" firstAttribute="centerX" secondItem="P3q-pj-Cvf" secondAttribute="centerX" id="yNf-Av-lrJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Zga-Ig-hE8"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="0Ar-AY-ySm" appends="YES" id="xO5-0A-iuQ"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Register" id="ntW-mZ-3Gm"/>
+                    <connections>
+                        <outlet property="confirmPassTextField" destination="5sA-nn-Lb7" id="sbY-Dm-7DO"/>
+                        <outlet property="emailTextField" destination="0ma-Vw-hOL" id="b2w-pZ-vtF"/>
+                        <outlet property="firstNameTextField" destination="3Of-uB-fJd" id="a8H-qg-72W"/>
+                        <outlet property="lastNameTextField" destination="UEZ-pv-of8" id="LlV-BP-vk6"/>
+                        <outlet property="passwordTextField" destination="80a-fT-f2v" id="I7f-Ev-Bc3"/>
+                        <outlet property="phoneTextField" destination="3ia-X7-bAb" id="zoV-At-aS0"/>
+                        <outlet property="registerButton" destination="7z5-4U-VoA" id="BT3-zb-6lJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HJ1-Dn-Lma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0Ar-AY-ySm">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="cqK-Le-U34" id="27o-Ce-cPV"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-2697.1014492753625" y="1582.3660714285713"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="eGi-YV-c08">
+            <objects>
+                <viewController storyboardIdentifier="AccountVC" id="jpN-6f-U8M" customClass="AccountViewController" customModule="BookEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Zr-hO-ttW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMn-st-sDI">
+                                <rect key="frame" x="107" y="554" width="200" height="35"/>
+                                <color key="backgroundColor" red="0.052919112150000003" green="0.363972187" blue="0.40000766519999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="pCB-sP-T6E"/>
+                                    <constraint firstAttribute="height" constant="35" id="snM-sw-O1y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                <state key="normal" title="Se deconnecter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButton:" destination="jpN-6f-U8M" eventType="touchUpInside" id="N1i-5l-G1N"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonjour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh0-w3-iVW">
+                                <rect key="frame" x="20" y="64" width="61" height="22.5"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prénom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSC-2H-5vK">
+                                <rect key="frame" x="57" y="144" width="300" height="17.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="CtR-a7-3Cg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="13"/>
+                                <color key="textColor" red="0.33822486793954232" green="0.34280827521800067" blue="0.36627060174942017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzn-Wr-eSQ">
+                                <rect key="frame" x="57" y="171.5" width="300" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="WLG-rV-8L2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7z-S3-BDw">
+                                <rect key="frame" x="57" y="214" width="300" height="17.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="zay-vZ-n6f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="13"/>
+                                <color key="textColor" red="0.33822486793954232" green="0.34280827521800067" blue="0.36627060174942017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tL6-wZ-nFJ">
+                                <rect key="frame" x="57" y="241.5" width="300" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="9Yd-0K-dih"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numéro de téléphone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cM-Qk-pbF">
+                                <rect key="frame" x="57" y="284" width="300" height="17.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ol0-EO-FrV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="13"/>
+                                <color key="textColor" red="0.33822486793954232" green="0.34280827521800067" blue="0.36627060174942017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vv3-G3-e9Y">
+                                <rect key="frame" x="57" y="311.5" width="300" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="hjz-tS-JTn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adresse mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EnB-ta-QFV">
+                                <rect key="frame" x="57" y="354" width="300" height="17.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Zt8-Pk-2Y8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="13"/>
+                                <color key="textColor" red="0.33822486793954232" green="0.34280827521800067" blue="0.36627060174942017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-qf-dsb">
+                                <rect key="frame" x="57" y="381.5" width="300" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="3en-3N-3cX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ws4-vQ-WAD">
+                                <rect key="frame" x="57" y="424" width="300" height="17.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="4gu-zI-4sA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="13"/>
+                                <color key="textColor" red="0.33822486793954232" green="0.34280827521800067" blue="0.36627060174942017" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4y-Zu-btx">
+                                <rect key="frame" x="57" y="451.5" width="300" height="22.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="3dy-9q-VQU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="GCy-Bf-8BK">
+                                <rect key="frame" x="182" y="423" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Zi8-pa-Lsu"/>
+                                    <constraint firstAttribute="height" constant="50" id="v4G-N9-crb"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDr-ve-c6p">
+                                <rect key="frame" x="57" y="285" width="300" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Ilx-DB-hat"/>
+                                    <constraint firstAttribute="height" constant="20" id="pjW-so-pOh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="11"/>
+                                <state key="normal" title="Modifier">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToPhoneUpdate:" destination="jpN-6f-U8M" eventType="touchUpInside" id="GkU-co-0To"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jb-I0-QOS">
+                                <rect key="frame" x="57" y="349" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="JcD-f3-8NS"/>
+                                    <constraint firstAttribute="height" constant="21" id="c7T-gc-esu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="11"/>
+                                <state key="normal" title="Modifier">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToMailUpdate:" destination="jpN-6f-U8M" eventType="touchUpInside" id="CNY-z0-KV2"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bP-3O-8E8">
+                                <rect key="frame" x="57" y="419" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="6R1-0f-ZGc"/>
+                                    <constraint firstAttribute="height" constant="21" id="Ui7-9E-d4n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS" family="Euphemia UCAS" pointSize="11"/>
+                                <state key="normal" title="Modifier">
+                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToPasswordUpdate:" destination="jpN-6f-U8M" eventType="touchUpInside" id="EwA-vB-6ud"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Ws4-vQ-WAD" firstAttribute="top" secondItem="FFf-qf-dsb" secondAttribute="bottom" constant="20" id="0Od-nF-jm6"/>
+                            <constraint firstItem="FSC-2H-5vK" firstAttribute="top" secondItem="2ji-v6-mg5" secondAttribute="top" constant="100" id="3Lb-mI-RuQ"/>
+                            <constraint firstItem="Z7z-S3-BDw" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="3Qi-vJ-Ust"/>
+                            <constraint firstItem="Jzn-Wr-eSQ" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="8mf-sp-a3Y"/>
+                            <constraint firstItem="KMn-st-sDI" firstAttribute="top" secondItem="D4y-Zu-btx" secondAttribute="bottom" constant="80" id="9dS-OS-gEy"/>
+                            <constraint firstItem="Jzn-Wr-eSQ" firstAttribute="top" secondItem="FSC-2H-5vK" secondAttribute="bottom" constant="10" id="CmU-LX-EoT"/>
+                            <constraint firstItem="EnB-ta-QFV" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="ESX-dx-Bqd"/>
+                            <constraint firstItem="wDr-ve-c6p" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="Ep4-ly-q1y"/>
+                            <constraint firstItem="D4y-Zu-btx" firstAttribute="top" secondItem="Ws4-vQ-WAD" secondAttribute="bottom" constant="10" id="Hun-jz-aOF"/>
+                            <constraint firstItem="GCy-Bf-8BK" firstAttribute="centerY" secondItem="3Zr-hO-ttW" secondAttribute="centerY" id="Kpx-lk-Pgb"/>
+                            <constraint firstItem="9jb-I0-QOS" firstAttribute="top" secondItem="vv3-G3-e9Y" secondAttribute="bottom" constant="15" id="ObO-dT-rJR"/>
+                            <constraint firstItem="9bP-3O-8E8" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="P68-hF-TwE"/>
+                            <constraint firstItem="KMn-st-sDI" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="Tia-at-jh4"/>
+                            <constraint firstItem="9bP-3O-8E8" firstAttribute="top" secondItem="FFf-qf-dsb" secondAttribute="bottom" constant="15" id="b3G-Zd-c6o"/>
+                            <constraint firstItem="9jb-I0-QOS" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="gpT-ZP-GE4"/>
+                            <constraint firstItem="vv3-G3-e9Y" firstAttribute="top" secondItem="0cM-Qk-pbF" secondAttribute="bottom" constant="10" id="h3x-YD-tGh"/>
+                            <constraint firstItem="0cM-Qk-pbF" firstAttribute="top" secondItem="tL6-wZ-nFJ" secondAttribute="bottom" constant="20" id="hih-Kk-3oQ"/>
+                            <constraint firstItem="vv3-G3-e9Y" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="iCU-8X-eAa"/>
+                            <constraint firstItem="Ws4-vQ-WAD" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="ikP-OM-gW8"/>
+                            <constraint firstItem="GCy-Bf-8BK" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="iye-86-aK3"/>
+                            <constraint firstItem="EnB-ta-QFV" firstAttribute="top" secondItem="vv3-G3-e9Y" secondAttribute="bottom" constant="20" id="jEG-cv-gzA"/>
+                            <constraint firstItem="FFf-qf-dsb" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="kbe-Nz-w64"/>
+                            <constraint firstItem="tL6-wZ-nFJ" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="ln4-Vp-7cf"/>
+                            <constraint firstItem="0cM-Qk-pbF" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="r0O-nL-aWd"/>
+                            <constraint firstItem="tL6-wZ-nFJ" firstAttribute="top" secondItem="Z7z-S3-BDw" secondAttribute="bottom" constant="10" id="s8u-uE-YJb"/>
+                            <constraint firstItem="gh0-w3-iVW" firstAttribute="leading" secondItem="2ji-v6-mg5" secondAttribute="leading" constant="20" id="t0k-pF-8Ct"/>
+                            <constraint firstItem="FSC-2H-5vK" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="tXz-Fs-xSM"/>
+                            <constraint firstItem="Z7z-S3-BDw" firstAttribute="top" secondItem="Jzn-Wr-eSQ" secondAttribute="bottom" constant="20" id="u80-CQ-jPz"/>
+                            <constraint firstItem="gh0-w3-iVW" firstAttribute="top" secondItem="2ji-v6-mg5" secondAttribute="top" constant="20" id="vKR-FQ-aTr"/>
+                            <constraint firstItem="D4y-Zu-btx" firstAttribute="centerX" secondItem="3Zr-hO-ttW" secondAttribute="centerX" id="vnx-dq-y92"/>
+                            <constraint firstItem="wDr-ve-c6p" firstAttribute="top" secondItem="tL6-wZ-nFJ" secondAttribute="bottom" constant="21" id="yeS-mA-Mc6"/>
+                            <constraint firstItem="FFf-qf-dsb" firstAttribute="top" secondItem="EnB-ta-QFV" secondAttribute="bottom" constant="10" id="zuR-lW-LQD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2ji-v6-mg5"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Account" image="person.circle" catalog="system" id="9HD-Ut-aNg"/>
+                    <connections>
+                        <outlet property="email" destination="EnB-ta-QFV" id="GiN-Cs-p0U"/>
+                        <outlet property="firstname" destination="FSC-2H-5vK" id="jm0-aF-TR6"/>
+                        <outlet property="firstnameLabel" destination="Jzn-Wr-eSQ" id="UzG-5l-jYm"/>
+                        <outlet property="lastname" destination="Z7z-S3-BDw" id="l2g-fC-hAm"/>
+                        <outlet property="lastnameLabel" destination="tL6-wZ-nFJ" id="lV2-6D-xY8"/>
+                        <outlet property="loadDataActivityIndicator" destination="GCy-Bf-8BK" id="hag-lh-o1W"/>
+                        <outlet property="logoutButton" destination="KMn-st-sDI" id="Euw-Ds-Cb5"/>
+                        <outlet property="mailLabel" destination="FFf-qf-dsb" id="8lp-ts-LAX"/>
+                        <outlet property="password" destination="Ws4-vQ-WAD" id="3s3-gL-WDS"/>
+                        <outlet property="passwordLabel" destination="D4y-Zu-btx" id="gp5-A5-nFS"/>
+                        <outlet property="phone" destination="0cM-Qk-pbF" id="KCX-zj-aPn"/>
+                        <outlet property="phoneLabel" destination="vv3-G3-e9Y" id="FFm-DN-u6K"/>
+                        <outlet property="updateMailButton" destination="9jb-I0-QOS" id="Uvo-yb-Ij8"/>
+                        <outlet property="updatePasswordButton" destination="9bP-3O-8E8" id="Feg-Zj-ewV"/>
+                        <outlet property="updatePhoneButton" destination="wDr-ve-c6p" id="HPT-rf-58A"/>
+                        <segue destination="pFt-fk-MjN" kind="presentation" identifier="segueForUpdate" id="Gaq-F8-NFE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KCE-iS-2Qx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162.31884057971016" y="1936.6071428571427"/>
+        </scene>
+        <!--Update View Controller-->
+        <scene sceneID="eZE-fh-Fue">
+            <objects>
+                <viewController id="pFt-fk-MjN" customClass="UpdateViewController" customModule="BookEat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9AB-e1-V11">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Numéro de téléphone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5L-Jc-VFp">
+                                <rect key="frame" x="92" y="125" width="230" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="whb-GM-hT5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eev-Xr-BWb">
+                                <rect key="frame" x="92" y="160" width="230" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="Bjq-dh-Go4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="family-name"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pFt-fk-MjN" id="IMP-iw-9g3"/>
+                                </connections>
+                            </textField>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retaper le mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhH-rI-9HC">
+                                <rect key="frame" x="92" y="209" width="230" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="M3j-B2-TSs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fO0-Fh-HNG">
+                                <rect key="frame" x="92" y="244" width="230" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="230" id="Hgy-3z-8JK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="family-name"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pFt-fk-MjN" id="nvH-Va-h4Q"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kU-0S-kiX">
+                                <rect key="frame" x="107" y="313" width="200" height="35"/>
+                                <color key="backgroundColor" red="0.052919112150000003" green="0.363972187" blue="0.40000766519999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6KS-M8-7dl"/>
+                                    <constraint firstAttribute="height" constant="35" id="Fy4-pZ-3fq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="17"/>
+                                <state key="normal" title="Valider">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="validate:" destination="pFt-fk-MjN" eventType="touchUpInside" id="VJ5-DX-eZ5"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="tlW-8W-Igy">
+                                <rect key="frame" x="182" y="396" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="C6v-uZ-qcf"/>
+                                    <constraint firstAttribute="width" constant="50" id="HwL-MI-Yn0"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="fO0-Fh-HNG" firstAttribute="top" secondItem="UhH-rI-9HC" secondAttribute="bottom" constant="15" id="1le-5H-ltY"/>
+                            <constraint firstItem="eev-Xr-BWb" firstAttribute="centerX" secondItem="9AB-e1-V11" secondAttribute="centerX" id="2Qn-Jb-otu"/>
+                            <constraint firstItem="UhH-rI-9HC" firstAttribute="top" secondItem="eev-Xr-BWb" secondAttribute="bottom" constant="15" id="C3E-bu-2q6"/>
+                            <constraint firstItem="fO0-Fh-HNG" firstAttribute="centerX" secondItem="9AB-e1-V11" secondAttribute="centerX" id="HGe-X1-KnU"/>
+                            <constraint firstItem="tlW-8W-Igy" firstAttribute="centerX" secondItem="9AB-e1-V11" secondAttribute="centerX" id="IvT-Pc-Qxd"/>
+                            <constraint firstItem="B5L-Jc-VFp" firstAttribute="centerX" secondItem="9AB-e1-V11" secondAttribute="centerX" id="MSk-sg-msC"/>
+                            <constraint firstItem="eev-Xr-BWb" firstAttribute="top" secondItem="B5L-Jc-VFp" secondAttribute="bottom" constant="15" id="VsL-qk-ZV1"/>
+                            <constraint firstItem="B5L-Jc-VFp" firstAttribute="top" secondItem="i4G-DG-Ujb" secondAttribute="top" constant="125" id="YPO-jG-91W"/>
+                            <constraint firstItem="0kU-0S-kiX" firstAttribute="top" secondItem="fO0-Fh-HNG" secondAttribute="bottom" constant="35" id="a3G-9a-uQY"/>
+                            <constraint firstItem="tlW-8W-Igy" firstAttribute="centerY" secondItem="9AB-e1-V11" secondAttribute="centerY" id="fdn-sX-SCl"/>
+                            <constraint firstItem="UhH-rI-9HC" firstAttribute="centerX" secondItem="9AB-e1-V11" secondAttribute="centerX" id="hK9-sJ-n8V"/>
+                            <constraint firstItem="0kU-0S-kiX" firstAttribute="centerX" secondItem="9AB-e1-V11" secondAttribute="centerX" id="xyo-aw-vtj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="i4G-DG-Ujb"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hJV-Oy-iKG" appends="YES" id="2cB-wU-d4M"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="confirmPassField" destination="fO0-Fh-HNG" id="VJA-mK-ZAo"/>
+                        <outlet property="confirmPassLabel" destination="UhH-rI-9HC" id="Shd-EV-EJR"/>
+                        <outlet property="loadingActivityIndicator" destination="tlW-8W-Igy" id="0SF-rO-VMH"/>
+                        <outlet property="newField" destination="eev-Xr-BWb" id="hOW-sE-rNO"/>
+                        <outlet property="updateLabel" destination="B5L-Jc-VFp" id="i8W-Rg-9T6"/>
+                        <outlet property="validButton" destination="0kU-0S-kiX" id="ZFc-eR-Gb1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wh5-dN-BUy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hJV-Oy-iKG">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="pFt-fk-MjN" id="ukR-I5-cgt"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="876.81159420289862" y="1936.6071428571427"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="668" height="669"/>
+        <image name="accountIcon" width="25" height="25"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="person.circle" catalog="system" width="64" height="60"/>
+    </resources>
+</document>

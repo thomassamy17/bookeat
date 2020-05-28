@@ -10,6 +10,7 @@
 		224A0F64C2B8DC49FBD5FF6B /* Pods_BookEat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF5FB6199771ED3723843B2 /* Pods_BookEat.framework */; };
 		E92F8D6E245CD1020060F33E /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F8D6D245CD1020060F33E /* UpdateViewController.swift */; };
 		E92F8D70245CEB290060F33E /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F8D6F245CEB290060F33E /* Sender.swift */; };
+		E93861732480627B008A19B5 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93861722480627B008A19B5 /* Restaurant.swift */; };
 		E966DDE12458D573002ED348 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966DDE02458D573002ED348 /* HomeViewController.swift */; };
 		E966DDE32458D57A002ED348 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966DDE22458D57A002ED348 /* SearchViewController.swift */; };
 		E966DDEB2458E89F002ED348 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E966DDEA2458E89F002ED348 /* User.swift */; };
@@ -33,6 +34,7 @@
 		DDF5FB6199771ED3723843B2 /* Pods_BookEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92F8D6D245CD1020060F33E /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		E92F8D6F245CEB290060F33E /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		E93861722480627B008A19B5 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		E966DDE02458D573002ED348 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E966DDE22458D57A002ED348 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E966DDEA2458E89F002ED348 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				E966DDEA2458E89F002ED348 /* User.swift */,
 				E92F8D6F245CEB290060F33E /* Sender.swift */,
+				E93861722480627B008A19B5 /* Restaurant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				E966DDEB2458E89F002ED348 /* User.swift in Sources */,
 				E9E7F5482458BBE3008C10D2 /* SceneDelegate.swift in Sources */,
 				E966DDE32458D57A002ED348 /* SearchViewController.swift in Sources */,
+				E93861732480627B008A19B5 /* Restaurant.swift in Sources */,
 				E9B09E1424593401002720BA /* RestaurantTableViewCell.swift in Sources */,
 				E9D6AC16245C677600D98D17 /* TabBarViewController.swift in Sources */,
 				E966DDE12458D573002ED348 /* HomeViewController.swift in Sources */,

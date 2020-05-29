@@ -32,6 +32,7 @@ class UpdateViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initButton(with: validButton)
         if let sender = sender {
             switch sender {
             case .phone:
@@ -51,17 +52,23 @@ class UpdateViewController: UIViewController, UITextFieldDelegate {
     //MARK: Functions
 
     fileprivate func updatePhone() {
-        self.db.collection("users").document(documentUID!).updateData([
-            "phone": newField.text!
-        ]) { err in
-            if let err = err {
-                self.isHidden(bool: false)
-                self.displayAlertError(with: "Error updating phone: \(err)")
-            } else {
-                self.delegate?.getResponse()
-                self.dismiss(animated: true, completion: nil)
+        if let err = verifPhone(with: newField.text!) {
+            self.isHidden(bool: false)
+            self.displayAlertError(with: err)
+        }else{
+            self.db.collection("users").document(documentUID!).updateData([
+                "phone": newField.text!
+            ]) { err in
+                if let err = err {
+                    self.isHidden(bool: false)
+                    self.displayAlertError(with: "Error updating phone: \(err)")
+                } else {
+                    self.delegate?.getResponse()
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
+        
     }
     
     fileprivate func updateEmail() {
@@ -76,13 +83,18 @@ class UpdateViewController: UIViewController, UITextFieldDelegate {
         }
     }
     fileprivate func updatePassword() {
-        Auth.auth().currentUser?.updatePassword(to: self.newField.text!) { (err) in
-            if let err = err {
-                self.isHidden(bool: false)
-                self.displayAlertError(with: err.localizedDescription)
-            } else {
-                self.delegate?.getResponse()
-                self.dismiss(animated: true, completion: nil)
+        if let err = verifPassword(with: newField.text!, confirm: confirmPassField.text!) {
+            self.isHidden(bool: false)
+            self.displayAlertError(with: err)
+        }else{
+            Auth.auth().currentUser?.updatePassword(to: self.newField.text!) { (err) in
+                if let err = err {
+                    self.isHidden(bool: false)
+                    self.displayAlertError(with: err.localizedDescription)
+                } else {
+                    self.delegate?.getResponse()
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
@@ -95,6 +107,12 @@ class UpdateViewController: UIViewController, UITextFieldDelegate {
     func isHidden(bool: Bool){
         self.validButton.isHidden = bool
         self.loadingActivityIndicator.isHidden = !bool
+    }
+    
+    func initButton(with button: UIButton){
+        button.layer.cornerRadius = 15
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
     }
     
     //MARK: UITextFieldDelegate
@@ -119,21 +137,7 @@ class UpdateViewController: UIViewController, UITextFieldDelegate {
                 case .email:
                     self.updateEmail()
                 case .password:
-                    if newField.text!.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
-                        isHidden(bool: false)
-                        self.displayAlertError(with: "Fill in password")
-                    }else if newField.text!.trimmingCharacters(in: .whitespacesAndNewlines).count < 8{
-                        isHidden(bool: false)
-                        self.displayAlertError(with: "Password must be at least 8 characters long")
-                    }else if newField.text!.rangeOfCharacter(from: .whitespacesAndNewlines) != nil{
-                        isHidden(bool: false)
-                        self.displayAlertError(with: "Spaces in password are not allowed")
-                    }else if newField.text != confirmPassField.text!{
-                        isHidden(bool: false)
-                        self.displayAlertError(with: "Passwords not matching")
-                    }else{
-                        self.updatePassword()
-                    }
+                    self.updatePassword()
                 }
             }
         }

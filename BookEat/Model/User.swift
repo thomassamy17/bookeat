@@ -54,3 +54,25 @@ struct User{
     }
 }
 
+func verifPhone(with phone: String) -> String?{
+    if phone.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+        return "Fill in phone number"
+    }else if phone.range(of: "^0[1-9][0-9]{8}$",options: .regularExpression) == nil{
+        return "Phone number is invalid"
+    }
+    return nil
+}
+
+func verifPassword(with password: String, confirm: String) -> String?{
+    if password.trimmingCharacters(in: .whitespacesAndNewlines) == ""{
+        return "Fill in password"
+    }else if password.trimmingCharacters(in: .whitespacesAndNewlines).count < 8{
+        return "Password must be at least 8 characters long"
+    }else if password.rangeOfCharacter(from: .whitespacesAndNewlines) != nil{
+        return "Spaces in password are not allowed"
+    }else if password != confirm{
+        return "Passwords not matching"
+    }
+    return nil
+}
+

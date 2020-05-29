@@ -26,17 +26,17 @@ class RestaurantTableViewCell: UITableViewCell {
     
     //MARK: Functions
 
-    func configure(name: String, horaires: String, dispo: Bool, ticket: Bool, url: String){
+    func configure(name: String?, horaires: String?, dispo: Bool?, ticket: Bool?, url: String?){
         nameRestoLabel.text = name
         horairesRestoLabel.text = horaires
-        if dispo {
-            dispoRestoLabel.text = "Ouvert maintenant"
+        if dispo! {
+            dispoRestoLabel.text = "Ouvert"
         }else{
             dispoRestoLabel.text = "Fermé"
             dispoRestoLabel.textColor = UIColor(displayP3Red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0);
         }
-        ticketRestoLabel.text = ticket ? "Accepte les titres restaurants" : ""
-        setImage (from: url )
+        ticketRestoLabel.text = ticket! ? "Accepte les titres restaurants" : ""
+        setImage (from: url! )
         
     }
     

@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
     //MARK: Properties
 
     var restaurants = [Restaurant]()
+    var currentRestaurant: Restaurant?
 
     //MARK: init
     
@@ -40,8 +41,8 @@ class HomeViewController: UIViewController {
                                        horaires: (document.data()["horaires"] as! [String]),
                                        ticket: (document.data()["ticket"] as! Bool),
                                        address: (document.data()["address"] as! String),
-                                       url: (document.data()["url"] as! String))
-                    print(r)
+                                       url_img: (document.data()["url_img"] as! String),
+                                       url_site: (document.data()["url_site"] as! String))
                     self.restaurants.append(r)
                 }
                 DispatchQueue.main.async
@@ -52,25 +53,13 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func checkOpen(with horaires: String) -> Bool{
-        var currentHour = "\(Calendar.current.component(.hour, from: Date()))"
-        if Calendar.current.component(.minute, from: Date()) < 10 {
-            currentHour += "0\(Calendar.current.component(.minute, from: Date()))"
-        }else{
-            currentHour += "\(Calendar.current.component(.minute, from: Date()))"
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToDetails" {
+            let successVC = segue.destination as! RestaurantDetailsViewController
+            successVC.restaurant = currentRestaurant!
         }
-        
-        let horaires = horaires.components(separatedBy: ":")
-        for horaire in horaires {
-            let array = horaire.components(separatedBy: "-")
-            if let open = Int(array[0]), let close = Int(array[1]), let current = Int(currentHour) {
-                if open < current && current < close {
-                    return true
-                }
-            }
-        }
-        return false
     }
+    
 }
 
 //MARK: Extension TableView
@@ -94,12 +83,25 @@ extension HomeViewController: UITableViewDataSource {
         let horaires = restaurant.horaires![Calendar.current.component(.weekday, from: Date())-1]
         cell.configure(name: restaurant.name,
                        horaires: horaires,
-                       dispo: checkOpen(with: horaires),
+                       dispo: restaurant.isOpen(),
                        ticket: restaurant.ticket,
-                       url: restaurant.url)
+                       url: restaurant.url_img)
         
         return cell
     }
+    
+    
+}
+
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       tableView.deselectRow(at: indexPath, animated: true)
+        currentRestaurant = restaurants[indexPath[1]]
+        performSegue(withIdentifier: "segueToDetails", sender: nil)
+    }
+    
+    
 }
 
 
